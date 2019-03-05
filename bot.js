@@ -1314,6 +1314,15 @@ class MyBot {
             // Read UserData from DB
             var user = await this.memoryStorage.read([this.userID]);
 
+            try {
+                if(user[this.userID].name) {
+                    console.log("Nutzerdaten gefunden");
+                }
+            }
+            catch (e) {
+                await await step.context.sendActivity("Leider sind keine Nutzerdaten bekannt.");
+            }
+            
             // Welcome user again
             if (treatment.rememberName == true) {
                 var msg = `Hallo und willkommen zurück, ${user[this.userID].name}. Ein Jahr ist vergangen.`;
@@ -1595,8 +1604,8 @@ class MyBot {
                         
                         // Funktionierender Code, wenn WebChat gefixt
                         console.log("User added");
-                        this.userID = turnContext.activity.membersAdded[idx].id;
-                        //this.userID = "1234512"
+                        //this.userID = turnContext.activity.membersAdded[idx].id;
+                        this.userID = "12345121"
                         console.log("UserID: " + this.userID);
                         
                         // Route to correct dialog depending on treatment and bot type

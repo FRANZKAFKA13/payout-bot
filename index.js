@@ -96,11 +96,11 @@ const adapter = new BotFrameworkAdapter({
 });
 
 // Scheinbar nötig für CosmosDB wirft bei local speicher aber error
-adapter.use(new AutoSaveStateMiddleware(conversationState));
-adapter.use(new AutoSaveStateMiddleware(userState));
+//adapter.use(new AutoSaveStateMiddleware(conversationState));
+//adapter.use(new AutoSaveStateMiddleware(userState));
 
 // Typing middleware
-adapter.use(new ShowTyping());
+//adapter.use(new ShowTyping());
 
 
 // Catch-all for any unhandled errors in your bot.
