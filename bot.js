@@ -1310,6 +1310,7 @@ class MyBot {
 
 
         async prepareStockPrep (step) {
+            console.log("Investment Dialog")
             // Read UserData from DB
             var user = await this.memoryStorage.read([this.userID]);
 
